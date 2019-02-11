@@ -16,6 +16,10 @@ export default new Router({
       path: '/popular/movies',
       name: 'popular.movies',
       component: () => import(/* webpackChunkName: "movies" */ './views/movies/Popular.vue'),
+    }, {
+      path: '/movie/details/:id',
+      name: 'movie.details',
+      component: () => import(/* webpackChunkName: "movies" */ './views/movies/Details.vue'),
     },
   ],
 });

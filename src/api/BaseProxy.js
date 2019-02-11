@@ -1,4 +1,5 @@
 import ApiError from '../exceptions/ApiError';
+import { API_URL } from '../utils/constants';
 
 class BaseProxy {
   constructor(endpoint, parameters = {}) {
@@ -11,9 +12,9 @@ class BaseProxy {
 
     try {
       if (['get', 'delete'].includes(requestType)) {
-        request = window.axios[requestType](`${this.endpoint}${url}`, { params });
+        request = window.axios[requestType](`${API_URL}${this.endpoint}${url}`, { params });
       } else {
-        request = window.axios[requestType](`${this.endpoint}${url}`, params);
+        request = window.axios[requestType](`${API_URL}${this.endpoint}${url}`, params);
       }
 
       const response = await request;

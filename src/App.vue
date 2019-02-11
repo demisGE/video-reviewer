@@ -1,11 +1,25 @@
 <template>
   <div id="app">
-    <transition name="slide-fade" mode="out-in">
-      <router-view/>
-    </transition>
-  </div>
+      <header>
+          <navbar-header></navbar-header>
+      </header>
+
+        <transition name="slide-fade" mode="out-in">
+            <router-view/>
+        </transition>
+    </div>
 </template>
 
+<script>
+import Header from './components/Header.vue';
+
+export default {
+  components: {
+    'navbar-header': Header,
+  },
+};
+
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
